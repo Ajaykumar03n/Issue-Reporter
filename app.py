@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'issuesreporter1@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ttno pyav zqlc czrw'
+app.config['MAIL_USERNAME'] = 'your email'
+app.config['MAIL_PASSWORD'] = 'your password'
 
 mail = Mail(app)
 
@@ -148,7 +148,7 @@ def submit_water_issues_form():
         sender_email = users[session['username']]['email']
         msg = Message('New Water Issue Report',
                       sender=sender_email,
-                      recipients=['nakofficial03@gmail.com'])
+                      recipients=['@gmail.com'])
         msg.body = f"User: {session['username']}\nProblem Type: {problem_type}\nProblem Description: {problem_description}\nDuration: {duration}"
 
         if filename:
@@ -232,7 +232,7 @@ def submit_maintenance_issues_form():
         sender_email = users[session['username']]['email']
         msg = Message('New maintenance Issue Report',
                       sender=sender_email,
-                      recipients=['nakofficial03@gmail.com'])
+                      recipients=['@gmail.com'])
         msg.body = f"User: {session['username']}\nProblem Type: {problem_type}\nProblem Description: {problem_description}\nDuration: {duration}"
 
         if filename:
